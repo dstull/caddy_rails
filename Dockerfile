@@ -2,9 +2,9 @@ FROM jumanjiman/caddy:v0.11.0-20181002T1350-git-3d0ba71
 
 USER root
 
-COPY caddyfile /etc/caddy/caddyfile
-COPY init.sh /usr/bin
-COPY healthcheck /var/opt/healthcheck
+COPY src/caddyfile /etc/caddy/caddyfile
+COPY src/init.sh /usr/bin
+COPY src/healthcheck /var/opt/healthcheck
 
 RUN apk add --update \
 		libcap \
