@@ -1,0 +1,25 @@
+https://localhost {
+	proxy / http://rails:3000 http://rails2:3000 {
+		transparent
+		websocket
+		policy round_robin
+		fail_timeout 30s
+		max_fails 1
+		try_duration 90s
+		health_check /stats?token=stats
+		health_check_interval 30s
+		health_check_port 9191
+		health_check_timeout 10s
+	}
+	errors stdout
+	header / {
+		Strict-Transport-Security "max-age=31536000"
+	}
+	cache {
+		match_path /assets
+		path /tmp
+	}
+	log / stdout "{combined} cache={cache_status}"
+	gzip
+	tls self_signed
+}

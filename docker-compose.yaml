@@ -1,0 +1,10 @@
+---
+version: '3.5'
+
+services:
+  caddy_rails:
+    build:
+      context: src
+    image: caddy_rails
+    ports:
+      - 443:443
