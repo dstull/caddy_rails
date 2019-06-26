@@ -6,9 +6,10 @@ COPY src/caddyfile /etc/caddy/caddyfile
 COPY src/init.sh /usr/bin
 COPY src/healthcheck /var/opt/healthcheck
 
-RUN apk add --update \
-		libcap \
-		&& rm -rf /var/cach/apk/*
+RUN apk add --no-cache \
+			libcap \
+			&& \
+		:
 
 RUN setcap cap_net_bind_service=+ep /usr/sbin/caddy
 
