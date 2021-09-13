@@ -15,6 +15,8 @@ RUN setcap cap_net_bind_service=+ep /usr/sbin/caddy
 
 VOLUME /tmp
 
+VOLUME /var/tmp
+
 USER caddy
 
 ENTRYPOINT ["/usr/bin/init.sh"]

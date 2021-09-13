@@ -2,7 +2,7 @@
 
 RC=0
 
-echo "Check validity of /etc/caddy/caddyfile"
+echo "Check validity of /etc/caddy/caddyfile for this project"
 
 if ! /usr/sbin/caddy -validate -conf /etc/caddy/caddyfile; then
   RC=1
