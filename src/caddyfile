@@ -16,6 +16,6 @@ https://localhost {
 		Strict-Transport-Security "max-age=31536000"
 	}
 	log / stdout "{combined} cache={cache_status}"
-	gzip
+	gzip -df
 	tls self_signed
 }
